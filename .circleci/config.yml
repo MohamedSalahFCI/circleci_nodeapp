@@ -1,11 +1,11 @@
-version: 2 # use CircleCI 2.0
+version: 2.1 # use CircleCI 2.0
 jobs: # a collection of steps
   run-bash:
 #say-hello:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
-    #docker:
-    #  - image: cimg/base:stable
+    docker:
+      - image: cimg/base:stable
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
