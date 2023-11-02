@@ -19,3 +19,9 @@ jobs: # a collection of steps
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+      - add_ssh_keys:
+          fingerprints:
+              - "b8:c4:17:60:5c:9b:a1:1c:14:fb:24:7b:5e:e2:b1:90"
+      - deploy:
+          name: deployment
+          command: ssh -o "StrictHostKeyChecking no" root@164.90.217.117 "cd ~ && rm -rf nodejs-hello-world && git clone https://github.com/MohamedSalahFCI/circleci_nodeapp.git nodejs-hello-world && cd nodejs-hello-world && sh post_deployment.sh "
