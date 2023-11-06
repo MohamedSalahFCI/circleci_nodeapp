@@ -20,4 +20,8 @@ jobs: # a collection of steps
 workflows:
   run-script-workflow:
     jobs:
-      - run-bash
+      - run-bash:
+          filters:
+            branches:
+              only:
+                - main # Specify the branch you want to trigger the job
